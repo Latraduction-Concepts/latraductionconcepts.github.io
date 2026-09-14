@@ -3,68 +3,753 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Latraduction Concepts | Certificate Verification</title>
+
+<title>Latraduction Concepts | Professional Training & Certification</title>
+
+<meta name="description" content="Latraduction Concepts provides practical professional training and recognized certification for students and creative professionals.">
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f6f4ee;color:#092b5b}
-.wrap{max-width:760px;margin:60px auto;padding:24px}
-.card{background:#fff;border:2px solid #c58b25;border-radius:16px;padding:38px;box-shadow:0 12px 35px rgba(0,0,0,.10)}
-h1{text-align:center;margin:0 0 8px;font-family:Georgia,serif;color:#092b5b}
-.sub{text-align:center;color:#666;margin-bottom:30px}
-input{width:100%;box-sizing:border-box;padding:15px;border:1px solid #c9c9c9;border-radius:8px;font-size:16px}
-button{width:100%;margin-top:12px;padding:15px;border:0;border-radius:8px;background:#092b5b;color:white;font-weight:bold;font-size:16px;cursor:pointer}
-.result{margin-top:25px;padding:20px;border-radius:10px;display:none}
-.valid{display:block;background:#eef8f0;border:1px solid #72a87b}
-.invalid{display:block;background:#fff0f0;border:1px solid #d07a7a}
-.label{font-size:12px;color:#777;text-transform:uppercase;letter-spacing:1px;margin-top:14px}
-.value{font-size:18px;font-weight:bold;margin-top:4px}
-.footer{text-align:center;margin-top:25px;font-size:13px;color:#777}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #07111f;
+  color: #f7f1df;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(7,17,31,0.96);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+}
+
+.nav-inner {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #d4af37;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(212,175,55,0.16), transparent 40%),
+    linear-gradient(135deg,#07111f,#101d31);
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.gold {
+  color: #d4af37;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #d6d9df;
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #d4af37;
+  color: #07111f;
+}
+
+.btn-secondary {
+  border: 1px solid #d4af37;
+  color: #d4af37;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 85px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #aeb6c2;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-box {
+  background: #0d1a2b;
+  border: 1px solid rgba(212,175,55,0.2);
+  padding: 35px;
+  border-radius: 12px;
+}
+
+.about-box h3 {
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+
+/* PROGRAMS */
+
+.programs {
+  background: #091525;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #101f33;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.18);
+}
+
+.card h3 {
+  color: #d4af37;
+  margin-bottom: 12px;
+}
+
+/* WHY US */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.feature {
+  padding: 25px;
+  background: #0d1a2b;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+.feature h3 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+/* VERIFICATION */
+
+.verify-section {
+  background: #0a1728;
+}
+
+.verify-box {
+  max-width: 650px;
+  margin: auto;
+  background: #101f33;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.35);
+  text-align: center;
+}
+
+.verify-box input {
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0 12px;
+  background: #07111f;
+  border: 1px solid #46566d;
+  color: white;
+  border-radius: 5px;
+}
+
+.verify-result {
+  margin-top: 20px;
+  padding: 20px;
+  display: none;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.valid {
+  background: rgba(36,150,80,0.16);
+  border: 1px solid #36a866;
+}
+
+.invalid {
+  background: rgba(200,50,50,0.12);
+  border: 1px solid #d65a5a;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+}
+
+.contact-box {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-box p {
+  margin: 10px 0;
+  color: #c4cad2;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 25px;
+  background: #d4af37;
+  color: #07111f;
+  padding: 15px 28px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 0;
+  text-align: center;
+  border-top: 1px solid rgba(212,175,55,0.2);
+  color: #8f99a8;
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .about-grid,
+  .cards,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+}
 </style>
 </head>
-<body>
-<div class="wrap">
-<div class="card">
-<h1>Latraduction Concepts</h1>
-<div class="sub">Certificate Verification Portal</div>
-<input id="id" placeholder="Enter Certificate ID e.g. LC-2026-001" autocomplete="off">
-<button onclick="verify()">VERIFY CERTIFICATE</button>
-<div id="result" class="result"></div>
-<div class="footer">LANGUAGE • TRAINING • GLOBAL OPPORTUNITIES</div>
-</div>
-</div>
-<script>
-let certificates=[];
-fetch('certificates.json').then(r=>r.json()).then(d=>{certificates=d; autoVerify();});
 
-function autoVerify(){
-  const id=new URLSearchParams(location.search).get('id');
-  if(id){document.getElementById('id').value=id; verify();}
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="container nav-inner">
+
+<div class="logo">
+LATRADUCTION CONCEPTS
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#programs">Programs</a>
+<a href="#verification">Verify Certificate</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<div class="badge">
+PROFESSIONAL TRAINING & CERTIFICATION
+</div>
+
+<h1>
+Build Skills.<br>
+<span class="gold">Build Your Future.</span>
+</h1>
+
+<p>
+Latraduction Concepts provides practical, professional training
+designed to help students and aspiring professionals develop
+real-world skills and earn credible certification.
+</p>
+
+<div class="buttons">
+
+<a href="#programs" class="btn btn-primary">
+Explore Programs
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About Latraduction Concepts</h2>
+<p>Practical knowledge for professional growth.</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-box">
+
+<h3>Who We Are</h3>
+
+<p>
+Latraduction Concepts is a professional training and
+skills-development platform focused on helping individuals
+gain practical knowledge, improve their professional abilities,
+and prepare for opportunities in the real world.
+</p>
+
+</div>
+
+<div class="about-box">
+
+<h3>Our Mission</h3>
+
+<p>
+Our mission is to make quality professional education practical,
+accessible and valuable by combining structured learning,
+hands-on knowledge and professional certification.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROGRAMS -->
+
+<section id="programs" class="programs">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Our Training Programs</h2>
+
+<p>
+Learn practical skills that can create real opportunities.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Photography Training</h3>
+
+<p>
+Develop your photography skills through practical learning,
+professional techniques, creative direction and business knowledge.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Professional Skills</h3>
+
+<p>
+Build valuable skills designed to improve your confidence,
+professional presentation and career opportunities.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Professional Certification</h3>
+
+<p>
+Complete your training and receive a professional certificate
+that can be independently verified through our online portal.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Choose Us?</h2>
+
+<p>We focus on practical results, not just theory.</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>Practical</h3>
+<p>Learn skills you can apply in real situations.</p>
+</div>
+
+<div class="feature">
+<h3>Professional</h3>
+<p>Training designed with professional standards in mind.</p>
+</div>
+
+<div class="feature">
+<h3>Certification</h3>
+<p>Receive certificates that can be verified online.</p>
+</div>
+
+<div class="feature">
+<h3>Growth</h3>
+<p>Develop skills that can support your career or business.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CERTIFICATE VERIFICATION -->
+
+<section id="verification" class="verify-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Certificate Verification</h2>
+
+<p>
+Verify a Latraduction Concepts certificate using its certificate ID.
+</p>
+
+</div>
+
+<div class="verify-box">
+
+<h3>Verify Certificate</h3>
+
+<input
+type="text"
+id="certificateId"
+placeholder="Enter Certificate ID e.g. LC-2026-001"
+>
+
+<button class="btn btn-primary" onclick="verifyCertificate()">
+Verify Certificate
+</button>
+
+<div id="result" class="verify-result"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<div class="container contact-box">
+
+<div class="section-title">
+
+<h2>Ready to Start?</h2>
+
+<p>
+Take the next step toward developing your professional skills.
+</p>
+
+</div>
+
+<p>
+<strong>Latraduction Concepts</strong>
+</p>
+
+<p>
+Nigeria
+</p>
+
+<p>
+Email: YOUR-EMAIL-HERE
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/234XXXXXXXXXX"
+target="_blank"
+>
+Chat With Us on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 Latraduction Concepts. All Rights Reserved.
+</p>
+
+<p>
+Professional Training • Skills Development • Certification
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+async function verifyCertificate() {
+
+const id =
+document.getElementById("certificateId").value
+.trim()
+.toUpperCase();
+
+const result =
+document.getElementById("result");
+
+if (!id) {
+
+result.style.display = "block";
+result.className = "verify-result invalid";
+result.innerHTML =
+"<strong>Please enter a certificate ID.</strong>";
+
+return;
+
 }
-function verify(){
-  const id=document.getElementById('id').value.trim().toUpperCase();
-  const box=document.getElementById('result');
-  const c=certificates.find(x=>x.certificate_id.toUpperCase()===id);
-  if(!c){
-    box.className='result invalid';
-    box.innerHTML='<strong>❌ CERTIFICATE NOT FOUND</strong><p>No certificate with this ID exists in the Latraduction Concepts verification registry.</p>';
-    return;
-  }
-  if(c.status!=='VALID'){
-    box.className='result invalid';
-    box.innerHTML='<strong>⚠ CERTIFICATE STATUS: '+c.status+'</strong><p>Please contact Latraduction Concepts for clarification.</p>';
-    return;
-  }
-  box.className='result valid';
-  box.innerHTML=
-    '<strong>✅ CERTIFICATE VERIFIED</strong>'+
-    '<div class="label">Student</div><div class="value">'+escapeHtml(c.student_name)+'</div>'+
-    '<div class="label">Certificate ID</div><div class="value">'+escapeHtml(c.certificate_id)+'</div>'+
-    '<div class="label">Date Issued</div><div class="value">'+escapeHtml(c.date_issued)+'</div>'+
-    '<div class="label">Program</div><div class="value">'+escapeHtml(c.program)+'</div>'+
-    '<div class="label">Status</div><div class="value">VALID</div>';
+
+try {
+
+const response =
+await fetch("certificates.json");
+
+const data =
+await response.json();
+
+let certificate = null;
+
+if (Array.isArray(data)) {
+
+certificate =
+data.find(item =>
+String(item.certificate_id || item.id)
+.toUpperCase() === id
+);
+
+} else {
+
+certificate = data[id];
+
+if (!certificate) {
+
+certificate =
+Object.values(data).find(item =>
+String(item.certificate_id || item.id)
+.toUpperCase() === id
+);
+
 }
-function escapeHtml(s){
- return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+
 }
+
+if (certificate) {
+
+result.style.display = "block";
+result.className = "verify-result valid";
+
+result.innerHTML = `
+
+<h3>✓ CERTIFICATE VERIFIED</h3>
+
+<p><strong>Student:</strong>
+${certificate.student_name || certificate.name || ""}</p>
+
+<p><strong>Certificate ID:</strong>
+${certificate.certificate_id || certificate.id || id}</p>
+
+<p><strong>Date Issued:</strong>
+${certificate.date_issued || certificate.date || ""}</p>
+
+<p><strong>Program:</strong>
+${certificate.program || ""}</p>
+
+<p><strong>Status:</strong>
+${certificate.status || "VALID"}</p>
+
+`;
+
+} else {
+
+result.style.display = "block";
+result.className = "verify-result invalid";
+
+result.innerHTML =
+"<strong>Certificate not found.</strong><br>Please check the Certificate ID and try again.";
+
+}
+
+}
+
+catch(error) {
+
+result.style.display = "block";
+result.className = "verify-result invalid";
+
+result.innerHTML =
+"Unable to connect to the verification database. Please try again later.";
+
+}
+
+}
+
 </script>
+
 </body>
 </html>
