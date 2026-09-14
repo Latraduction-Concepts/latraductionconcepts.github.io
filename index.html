@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latraduction Concepts | Certificate Verification</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f6f4ee;color:#092b5b}
+.wrap{max-width:760px;margin:60px auto;padding:24px}
+.card{background:#fff;border:2px solid #c58b25;border-radius:16px;padding:38px;box-shadow:0 12px 35px rgba(0,0,0,.10)}
+h1{text-align:center;margin:0 0 8px;font-family:Georgia,serif;color:#092b5b}
+.sub{text-align:center;color:#666;margin-bottom:30px}
+input{width:100%;box-sizing:border-box;padding:15px;border:1px solid #c9c9c9;border-radius:8px;font-size:16px}
+button{width:100%;margin-top:12px;padding:15px;border:0;border-radius:8px;background:#092b5b;color:white;font-weight:bold;font-size:16px;cursor:pointer}
+.result{margin-top:25px;padding:20px;border-radius:10px;display:none}
+.valid{display:block;background:#eef8f0;border:1px solid #72a87b}
+.invalid{display:block;background:#fff0f0;border:1px solid #d07a7a}
+.label{font-size:12px;color:#777;text-transform:uppercase;letter-spacing:1px;margin-top:14px}
+.value{font-size:18px;font-weight:bold;margin-top:4px}
+.footer{text-align:center;margin-top:25px;font-size:13px;color:#777}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<h1>Latraduction Concepts</h1>
+<div class="sub">Certificate Verification Portal</div>
+<input id="id" placeholder="Enter Certificate ID e.g. LC-2026-001" autocomplete="off">
+<button onclick="verify()">VERIFY CERTIFICATE</button>
+<div id="result" class="result"></div>
+<div class="footer">LANGUAGE • TRAINING • GLOBAL OPPORTUNITIES</div>
+</div>
+</div>
+<script>
+let certificates=[];
+fetch('certificates.json').then(r=>r.json()).then(d=>{certificates=d; autoVerify();});
+
+function autoVerify(){
+  const id=new URLSearchParams(location.search).get('id');
+  if(id){document.getElementById('id').value=id; verify();}
+}
+function verify(){
+  const id=document.getElementById('id').value.trim().toUpperCase();
+  const box=document.getElementById('result');
+  const c=certificates.find(x=>x.certificate_id.toUpperCase()===id);
+  if(!c){
+    box.className='result invalid';
+    box.innerHTML='<strong>❌ CERTIFICATE NOT FOUND</strong><p>No certificate with this ID exists in the Latraduction Concepts verification registry.</p>';
+    return;
+  }
+  if(c.status!=='VALID'){
+    box.className='result invalid';
+    box.innerHTML='<strong>⚠ CERTIFICATE STATUS: '+c.status+'</strong><p>Please contact Latraduction Concepts for clarification.</p>';
+    return;
+  }
+  box.className='result valid';
+  box.innerHTML=
+    '<strong>✅ CERTIFICATE VERIFIED</strong>'+
+    '<div class="label">Student</div><div class="value">'+escapeHtml(c.student_name)+'</div>'+
+    '<div class="label">Certificate ID</div><div class="value">'+escapeHtml(c.certificate_id)+'</div>'+
+    '<div class="label">Date Issued</div><div class="value">'+escapeHtml(c.date_issued)+'</div>'+
+    '<div class="label">Program</div><div class="value">'+escapeHtml(c.program)+'</div>'+
+    '<div class="label">Status</div><div class="value">VALID</div>';
+}
+function escapeHtml(s){
+ return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+</script>
+</body>
+</html>
