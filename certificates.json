@@ -5,5 +5,12 @@
     "date_issued": "14th September, 2026",
     "program": "Training Program",
     "status": "VALID"
+  },
+  {
+    "certificate_id": "LC-2026-002",
+    "student_name": "FATIMAH BISOLA MEMUDU",
+    "date_issued": "July 31th, 2026",
+    "program": "Training Program",
+    "status": "VALID"
   }
 ]
