@@ -129,6 +129,8 @@ nav {
   border-radius: 5px;
   font-weight: bold;
   display: inline-block;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -159,6 +161,61 @@ section {
 
 .section-title p {
   color: #aeb6c2;
+}
+
+/* IMAGE SLIDER */
+
+.image-slider {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.slider-track {
+  display: flex;
+  width: 400%;
+  animation: latraductionSlide 16s infinite;
+}
+
+.slide {
+  width: 25%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+@keyframes latraductionSlide {
+  0%, 20% {
+    transform: translateX(0);
+  }
+
+  25%, 45% {
+    transform: translateX(-25%);
+  }
+
+  50%, 70% {
+    transform: translateX(-50%);
+  }
+
+  75%, 95% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* ABOUT */
@@ -271,6 +328,156 @@ section {
   border: 1px solid #d65a5a;
 }
 
+/* TESTIMONIALS */
+
+.testimonials {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  max-width: 350px;
+  width: 100%;
+}
+
+.testimonial-card video {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.testimonial-card h3 {
+  margin-top: 12px;
+}
+
+/* GALLERY */
+
+.gallery {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #d4af37;
+}
+
+.gallery-description {
+  margin-bottom: 40px;
+  color: #c4cad2;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.gallery-track {
+  display: flex;
+  width: 400%;
+  animation: latraductionGallery 16s infinite;
+}
+
+.gallery-slide {
+  width: 25%;
+  flex-shrink: 0;
+}
+
+.gallery-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+}
+
+@keyframes latraductionGallery {
+  0%, 20% {
+    transform: translateX(0);
+  }
+
+  25%, 45% {
+    transform: translateX(-25%);
+  }
+
+  50%, 70% {
+    transform: translateX(-50%);
+  }
+
+  75%, 95% {
+    transform: translateX(-75%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* COURSES */
+
+.courses {
+  padding: 70px 20px;
+  background: #f7f3eb;
+  text-align: center;
+  color: #333;
+}
+
+.courses h2 {
+  font-size: 36px;
+  color: #14213d;
+  margin-bottom: 15px;
+}
+
+.courses-intro {
+  max-width: 750px;
+  margin: 0 auto 45px;
+  font-size: 18px;
+  color: #555;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.course-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 330px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.course-card h3 {
+  color: #14213d;
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  margin-bottom: 22px;
+}
+
+.course-button {
+  display: inline-block;
+  background: #f4c542;
+  color: #14213d;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* CONTACT */
 
 .contact {
@@ -287,11 +494,15 @@ section {
   color: #c4cad2;
 }
 
+.contact-box a {
+  color: #d4af37;
+}
+
 .whatsapp {
   display: inline-block;
   margin-top: 25px;
   background: #d4af37;
-  color: #07111f;
+  color: #07111f !important;
   padding: 15px 28px;
   border-radius: 5px;
   font-weight: bold;
@@ -305,6 +516,19 @@ footer {
   border-top: 1px solid rgba(212,175,55,0.2);
   color: #8f99a8;
   font-size: 13px;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icons a {
+  color: #d4af37;
+  font-size: 24px;
+  text-decoration: none;
 }
 
 /* MOBILE */
@@ -333,6 +557,15 @@ footer {
     font-size: 48px;
   }
 
+  .course-card {
+    max-width: 100%;
+  }
+
+  .section-title h2,
+  .courses h2,
+  .gallery h2 {
+    font-size: 30px;
+  }
 }
 </style>
 </head>
@@ -342,116 +575,93 @@ footer {
 <!-- NAVIGATION -->
 
 <nav>
-<div class="container nav-inner">
+  <div class="container nav-inner">
 
-<div class="logo">
-LATRADUCTION CONCEPTS
-</div>
+    <div class="logo">
+      LATRADUCTION CONCEPTS
+    </div>
 
-<div class="nav-links">
-  <a href="#about">About</a>
-  <a href="#programs">Programs</a>
-  <a href="#verification">Verify Certificate</a>
-  <a href="#contact">Contact</a>
-</div>
-<div style="margin-top:20px; display:flex; justify-content:center; gap:18px;">
-  <a href="https://www.facebook.com/share/1DMw19rbrw/" target="_blank" aria-label="Facebook" style="color:#14213d; font-size:24px; text-decoration:none;">f</a>
-  <a href="https://www.instagram.com/temmyak" target="_blank" aria-label="Instagram" style="color:#14213d; font-size:24px; text-decoration:none;">◎</a>
-  <a href="https://www.tiktok.com/@temmyak90" target="_blank" aria-label="TikTok" style="color:#14213d; font-size:24px; text-decoration:none;">♪</a>
-  <a href="https://wa.me/2348154762565" target="_blank" aria-label="WhatsApp" style="color:#14213d; font-size:24px; text-decoration:none;">◉</a>
-</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#verification">Verify Certificate</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-</div>
+  </div>
+</nav>
+
 
 <!-- HERO -->
 
 <header class="hero">
 
-<div class="container hero-content">
+  <div class="container hero-content">
 
-<div class="badge">
-PROFESSIONAL TRAINING & CERTIFICATION
-</div>
-
-<h1>
-Build Skills.<br>
-<span class="gold">Build Your Future.</span>
-</h1>
-
-<p>
-Latraduction Concepts provides practical, professional french training programs and we help aspiring professionals develop
-french language competencies and earn credible certification.
-</p>
-
-<div class="buttons">
-
-<a href="#programs" class="btn btn-primary">
-Explore Programs
-</a>
-
-<a href="#contact" class="btn btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
-</header>
-<section style="text-align:center; padding:40px 20px;">
-<div style="width:100%; max-width:900px; margin:0 auto; overflow:hidden; border-radius:18px;">
-
-  <div style="display:flex; width:400%; animation:latraductionSlide 16s infinite;">
-
-    <div style="width:25%; flex-shrink:0;">
-      <img src="french-classroom.jpg"
-           alt="French language students learning in a classroom"
-           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    <div class="badge">
+      PROFESSIONAL TRAINING & CERTIFICATION
     </div>
 
-    <div style="width:25%; flex-shrink:0;">
-      <img src="Listening.png"
-           alt="African students listening and learning French in class"
-           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
-    </div>
+    <h1>
+      Build Skills.<br>
+      <span class="gold">Build Your Future.</span>
+    </h1>
 
-    <div style="width:25%; flex-shrink:0;">
-      <img src="Translation.png"
-           alt="African students translating French on laptops"
-           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
-    </div>
+    <p>
+      Latraduction Concepts provides practical, professional French
+      training programs and we help aspiring professionals develop
+      French language competencies and earn credible certification.
+    </p>
 
-    <div style="width:25%; flex-shrink:0;">
-      <img src="excursion.png"
-           alt="African French students on a cultural excursion"
-           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    <div class="buttons">
+
+      <a href="#programs" class="btn btn-primary">
+        Explore Programs
+      </a>
+
+      <a href="#contact" class="btn btn-secondary">
+        Contact Us
+      </a>
+
     </div>
 
   </div>
-</div>
 
-<style>
-@keyframes latraductionSlide {
-  0%, 20% {
-    transform: translateX(0);
-  }
-  25%, 45% {
-    transform: translateX(-25%);
-  }
-  50%, 70% {
-    transform: translateX(-50%);
-  }
-  75%, 95% {
-    transform: translateX(-75%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-</style>
-  }
-}
-</style>
+</header>
+
+
+<!-- TOP IMAGE SLIDER -->
+
+<section class="image-slider">
+
+  <div class="slider-container">
+
+    <div class="slider-track">
+
+      <div class="slide">
+        <img src="french-classroom.jpg"
+             alt="French language students learning in a classroom">
+      </div>
+
+      <div class="slide">
+        <img src="Listening.png"
+             alt="African students listening and learning French in class">
+      </div>
+
+      <div class="slide">
+        <img src="Translation.png"
+             alt="African students translating French on laptops">
+      </div>
+
+      <div class="slide">
+        <img src="excursion.png"
+             alt="African French students on a cultural excursion">
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 
@@ -459,40 +669,43 @@ Contact Us
 
 <section id="about">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
-<h2>About Latraduction Concepts</h2>
-<p>Practical knowledge for professional growth.</p>
-</div>
+    <div class="section-title">
+      <h2>About Latraduction Concepts</h2>
+      <p>Practical knowledge for professional growth.</p>
+    </div>
 
-<div class="about-grid">
+    <div class="about-grid">
 
-<div class="about-box">
+      <div class="about-box">
 
-<h3>Who We Are</h3>
+        <h3>Who We Are</h3>
 
-<p>
-Latraduction Concepts is a professional language services and coaching provider specializing in French language education, fluency programs, and exam preparation such as DELF, DALF, TCF & TEF.
-</p>
+        <p>
+          Latraduction Concepts is a professional language services and
+          coaching provider specializing in French language education,
+          fluency programs, and exam preparation such as DELF, DALF,
+          TCF & TEF.
+        </p>
 
-</div>
+      </div>
 
-<div class="about-box">
+      <div class="about-box">
 
-<h3>Our Mission</h3>
+        <h3>Our Mission</h3>
 
-<p>
-Our mission is to help people move from learning French 
-  to actually communicating in French through 
-  structured, practical, learner-centred training.
-</p>
+        <p>
+          Our mission is to help people move from learning French
+          to actually communicating in French through
+          structured, practical, learner-centred training.
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -501,61 +714,62 @@ Our mission is to help people move from learning French
 
 <section id="programs" class="programs">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>Our Services at Latraduction Concepts</h2>
+      <h2>Our Services at Latraduction Concepts</h2>
 
-<p>
-TEF, TCF,  DELF & DALF Exam Preparation, 
+      <p>
+        TEF, TCF, DELF & DALF Exam Preparation,
+        English–French Translation & Interpretation,
+        Proofreading & Editing,
+        Customized French Classes & Learning Resources,
+        Pre-recorded French Lessons,
+        Empowering learners and businesses to communicate confidently
+        across languages and cultures.
+      </p>
 
-English–French Translation & Interpretation,
+    </div>
 
-Proofreading & Editing,
- 
-Customized French Classes & Learning Resources, 
+    <div class="cards">
 
-Pre-recorded French Lessons,
+      <div class="card">
 
-Empowering learners and businesses to communicate confidently across languages and cultures.
+        <h3>French Language Training</h3>
 
-</p>
+        <p>
+          Develop practical French language skills through structured
+          training designed to improve communication and confidence.
+        </p>
 
-</div>
+      </div>
 
-<div class="cards">
+      <div class="card">
 
-<div class="card">
+        <h3>Professional Skills</h3>
 
+        <p>
+          Build valuable skills designed to improve your confidence,
+          professional presentation and career opportunities.
+        </p>
 
-</div>
+      </div>
 
-<div class="card">
+      <div class="card">
 
-<h3>Professional Skills</h3>
+        <h3>Professional Certification</h3>
 
-<p>
-Build valuable skills designed to improve your confidence,
-professional presentation and career opportunities.
-</p>
+        <p>
+          Complete your training and receive a professional certificate
+          that can be independently verified through our online portal.
+        </p>
 
-</div>
+      </div>
 
-<div class="card">
+    </div>
 
-<h3>Professional Certification</h3>
-
-<p>
-Complete your training and receive a professional certificate
-that can be independently verified through our online portal.
-</p>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -564,41 +778,51 @@ that can be independently verified through our online portal.
 
 <section>
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>Why Choose Us?</h2>
+      <h2>Why Choose Us?</h2>
 
-<p>We focus on practical results, not just theory.</p>
+      <p>
+        We focus on practical results, not just theory.
+      </p>
 
-</div>
+    </div>
 
-<div class="features">
+    <div class="features">
 
-<div class="feature">
-<h3>Practical</h3>
-<p>Learn skills you can apply in real situations.</p>
-</div>
+      <div class="feature">
+        <h3>Practical</h3>
+        <p>
+          Learn skills you can apply in real situations.
+        </p>
+      </div>
 
-<div class="feature">
-<h3>Professional</h3>
-<p>Training designed with professional standards in mind.</p>
-</div>
+      <div class="feature">
+        <h3>Professional</h3>
+        <p>
+          Training designed with professional standards in mind.
+        </p>
+      </div>
 
-<div class="feature">
-<h3>Certification</h3>
-<p>Receive certificates that can be verified online.</p>
-</div>
+      <div class="feature">
+        <h3>Certification</h3>
+        <p>
+          Receive certificates that can be verified online.
+        </p>
+      </div>
 
-<div class="feature">
-<h3>Growth</h3>
-<p>Develop skills that can support your career or business.</p>
-</div>
+      <div class="feature">
+        <h3>Growth</h3>
+        <p>
+          Develop skills that can support your career or business.
+        </p>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -607,37 +831,300 @@ that can be independently verified through our online portal.
 
 <section id="verification" class="verify-section">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>Certificate Verification</h2>
+      <h2>Certificate Verification</h2>
 
-<p>
-Verify a Latraduction Concepts certificate using its certificate ID.
-</p>
+      <p>
+        Verify a Latraduction Concepts certificate using its certificate ID.
+      </p>
 
-</div>
+    </div>
 
-<div class="verify-box">
+    <div class="verify-box">
 
-<h3>Verify Certificate</h3>
+      <h3>Verify Certificate</h3>
 
-<input
-type="text"
-id="certificateId"
-placeholder="Enter Certificate ID e.g. LC-2026-001"
->
+      <input
+        type="text"
+        id="certificateId"
+        placeholder="Enter Certificate ID e.g. LC-2026-002"
+      >
 
-<button class="btn btn-primary" onclick="verifyCertificate()">
-Verify Certificate
-</button>
+      <button
+        class="btn btn-primary"
+        onclick="verifyCertificate()"
+      >
+        Verify Certificate
+      </button>
 
-<div id="result" class="verify-result"></div>
+      <div id="result" class="verify-result"></div>
 
-</div>
+    </div>
 
-</div>
+  </div>
+
+</section>
+
+
+<!-- STUDENT TESTIMONIALS -->
+
+<section id="testimonials" class="testimonials">
+
+  <div class="container">
+
+    <h2>Student Testimonials</h2>
+
+    <p>
+      Hear directly from some of our students about their learning
+      experience at Latraduction Concepts.
+    </p>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card">
+
+        <video controls playsinline>
+          <source src="V1.mp4" type="video/mp4">
+        </video>
+
+        <h3>Ifunanya Obianefo</h3>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <video controls playsinline>
+          <source src="V2.mp4" type="video/mp4">
+        </video>
+
+        <h3>Mrs Oluwabanke Adeusi</h3>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <video controls playsinline>
+          <source src="V3.mp4" type="video/mp4">
+        </video>
+
+        <h3>Nimah Hammed</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery" class="gallery">
+
+  <div class="container">
+
+    <h2>Gallery</h2>
+
+    <p class="gallery-description">
+      A glimpse into learning, practice and cultural experiences
+      at Latraduction Concepts.
+    </p>
+
+    <div class="gallery-container">
+
+      <div class="gallery-track">
+
+        <div class="gallery-slide">
+          <img
+            src="french-classroom.jpg"
+            alt="French language students learning in a classroom"
+          >
+        </div>
+
+        <div class="gallery-slide">
+          <img
+            src="Listening.png"
+            alt="African students listening and learning French"
+          >
+        </div>
+
+        <div class="gallery-slide">
+          <img
+            src="Translation.png"
+            alt="African students practising French translation"
+          >
+        </div>
+
+        <div class="gallery-slide">
+          <img
+            src="excursion.png"
+            alt="African students on a French cultural excursion"
+          >
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FRENCH COURSES -->
+
+<section id="courses" class="courses">
+
+  <div class="container">
+
+    <h2>French Language Programs</h2>
+
+    <p class="courses-intro">
+      Build your French language skills with practical training designed
+      to help you communicate with confidence in real-life situations.
+    </p>
+
+    <div class="course-grid">
+
+
+      <!-- BEGINNERS -->
+
+      <div class="course-card">
+
+        <h3>French for Beginners</h3>
+
+        <p>
+          Start from the basics and learn essential French vocabulary,
+          grammar, pronunciation and everyday expressions.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Beginners%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+
+      <!-- INTERMEDIATE -->
+
+      <div class="course-card">
+
+        <h3>Intermediate French</h3>
+
+        <p>
+          Improve your speaking, listening, reading and writing while
+          developing greater confidence in French.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20Intermediate%20French%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+
+      <!-- ADVANCED -->
+
+      <div class="course-card">
+
+        <h3>Advanced French</h3>
+
+        <p>
+          Develop advanced communication skills and express yourself
+          more naturally and effectively in French.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20Advanced%20French%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+
+      <!-- CONVERSATION -->
+
+      <div class="course-card">
+
+        <h3>French Conversation</h3>
+
+        <p>
+          Strengthen your speaking and listening skills through practical
+          conversations and interactive practice.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20Conversation%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+
+      <!-- TRAVEL -->
+
+      <div class="course-card">
+
+        <h3>French for Travel</h3>
+
+        <p>
+          Learn useful French expressions and communication skills
+          for travelling and interacting confidently abroad.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Travel%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+
+      <!-- BUSINESS -->
+
+      <div class="course-card">
+
+        <h3>French for Business</h3>
+
+        <p>
+          Learn professional French vocabulary and communication skills
+          for the workplace and international business.
+        </p>
+
+        <a
+          href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Business%20course."
+          target="_blank"
+          class="course-button"
+        >
+          Enroll Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -646,351 +1133,268 @@ Verify Certificate
 
 <section id="contact" class="contact">
 
-<div class="container contact-box">
+  <div class="container contact-box">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>Ready to Start?</h2>
+      <h2>Ready to Start?</h2>
 
-<p>
-Take the next step toward developing your professional skills.
-</p>
+      <p>
+        Take the next step toward developing your professional skills.
+      </p>
 
-</div>
+    </div>
 
-<p>
-<strong>Latraduction Concepts</strong>
-</p>
+    <p>
+      <strong>Latraduction Concepts</strong>
+    </p>
 
-<p>
-Nigeria
-</p>
+    <p>
+      Nigeria
+    </p>
 
-<p>
-<strong>Email:</strong>
-<a href="mailto:topebunmi@gmail.com">
-topebunmi@gmail.com
-</a>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:topebunmi@gmail.com">
+        topebunmi@gmail.com
+      </a>
+    </p>
 
-<p>
-<strong>WhatsApp:</strong>
-<a href="https://wa.me/2348154762565" target="_blank">
-+234 815 476 2565
-</a>
-</p>
+    <p>
+      <strong>WhatsApp:</strong>
+      <a
+        href="https://wa.me/2348154762565"
+        target="_blank"
+      >
+        +234 815 476 2565
+      </a>
+    </p>
 
-<p>
-<strong>Facebook Profile:</strong>
-Temitope Elizabeth Akinbola
-</p>
+    <p>
+      <strong>Facebook Profile:</strong>
+      Temitope Elizabeth Akinbola
+    </p>
 
-<p>
-<strong>Facebook Page:</strong>
-Latraduction Concepts
-</p>
+    <p>
+      <strong>Facebook Page:</strong>
+      Latraduction Concepts
+    </p>
 
-<p>
-<strong>TikTok:</strong>
-Latraduction Concepts
-</p>
+    <p>
+      <strong>TikTok:</strong>
+      Latraduction Concepts
+    </p>
 
-<p>
-<strong>Instagram:</strong>
-@temmyak
-</p>
+    <p>
+      <strong>Instagram:</strong>
+      @temmyak
+    </p>
 
-<a
-class="whatsapp"
-href="https://wa.me/2348154762565"
-target="_blank"
->
-Chat With Us on WhatsApp
-</a>
+    <a
+      class="whatsapp"
+      href="https://wa.me/2348154762565"
+      target="_blank"
+    >
+      Chat With Us on WhatsApp
+    </a>
 
-</div>
+  </div>
 
 </section>
+
 
 <!-- FOOTER -->
 
 <footer>
 
-<div class="container">
+  <div class="container">
 
-<p>
-© 2026 Latraduction Concepts. All Rights Reserved.
-</p>
+    <p>
+      © 2026 Latraduction Concepts. All Rights Reserved.
+    </p>
 
-<p>
-Professional Training • Skills Development • Certification
-</p>
+    <p>
+      Professional Training • Skills Development • Certification
+    </p>
 
-</div>
+    <div class="social-icons">
+
+      <a
+        href="https://www.facebook.com/share/1DMw19rbrw/"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        f
+      </a>
+
+      <a
+        href="https://www.instagram.com/temmyak"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        ◎
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@temmyak90"
+        target="_blank"
+        aria-label="TikTok"
+      >
+        ♪
+      </a>
+
+      <a
+        href="https://wa.me/2348154762565"
+        target="_blank"
+        aria-label="WhatsApp"
+      >
+        ◉
+      </a>
+
+    </div>
+
+  </div>
 
 </footer>
 
+
+<!-- CERTIFICATE VERIFICATION SCRIPT -->
 
 <script>
 
 async function verifyCertificate() {
 
-const id =
-document.getElementById("certificateId").value
-.trim()
-.toUpperCase();
+  const id =
+    document
+      .getElementById("certificateId")
+      .value
+      .trim()
+      .toUpperCase();
 
-const result =
-document.getElementById("result");
+  const result =
+    document.getElementById("result");
 
-if (!id) {
+  if (!id) {
 
-result.style.display = "block";
-result.className = "verify-result invalid";
-result.innerHTML =
-"<strong>Please enter a certificate ID.</strong>";
+    result.style.display = "block";
 
-return;
+    result.className =
+      "verify-result invalid";
 
-}
+    result.innerHTML =
+      "<strong>Please enter a certificate ID.</strong>";
 
-try {
+    return;
+  }
 
-const response =
-await fetch("certificates.json");
+  try {
 
-const data =
-await response.json();
+    const response =
+      await fetch("certificates.json");
 
-let certificate = null;
+    const data =
+      await response.json();
 
-if (Array.isArray(data)) {
+    let certificate = null;
 
-certificate =
-data.find(item =>
-String(item.certificate_id || item.id)
-.toUpperCase() === id
-);
+    if (Array.isArray(data)) {
 
-} else {
+      certificate =
+        data.find(item =>
+          String(
+            item.certificate_id || item.id
+          )
+          .toUpperCase() === id
+        );
 
-certificate = data[id];
+    } else {
 
-if (!certificate) {
+      certificate = data[id];
 
-certificate =
-Object.values(data).find(item =>
-String(item.certificate_id || item.id)
-.toUpperCase() === id
-);
+      if (!certificate) {
 
-}
+        certificate =
+          Object.values(data).find(item =>
+            String(
+              item.certificate_id || item.id
+            )
+            .toUpperCase() === id
+          );
 
-}
+      }
 
-if (certificate) {
+    }
 
-result.style.display = "block";
-result.className = "verify-result valid";
+    if (certificate) {
 
-result.innerHTML = `
+      result.style.display = "block";
 
-<h3>✓ CERTIFICATE VERIFIED</h3>
+      result.className =
+        "verify-result valid";
 
-<p><strong>Student:</strong>
-${certificate.student_name || certificate.name || ""}</p>
+      result.innerHTML = `
 
-<p><strong>Certificate ID:</strong>
-${certificate.certificate_id || certificate.id || id}</p>
+        <h3>✓ CERTIFICATE VERIFIED</h3>
 
-<p><strong>Date Issued:</strong>
-${certificate.date_issued || certificate.date || ""}</p>
+        <p>
+          <strong>Student:</strong>
+          ${certificate.student_name || certificate.name || ""}
+        </p>
 
-<p><strong>Program:</strong>
-${certificate.program || ""}</p>
+        <p>
+          <strong>Certificate ID:</strong>
+          ${certificate.certificate_id || certificate.id || id}
+        </p>
 
-<p><strong>Status:</strong>
-${certificate.status || "VALID"}</p>
+        <p>
+          <strong>Date Issued:</strong>
+          ${certificate.date_issued || certificate.date || ""}
+        </p>
 
-`;
+        <p>
+          <strong>Program:</strong>
+          ${certificate.program || ""}
+        </p>
 
-} else {
+        <p>
+          <strong>Status:</strong>
+          ${certificate.status || "VALID"}
+        </p>
 
-result.style.display = "block";
-result.className = "verify-result invalid";
+      `;
 
-result.innerHTML =
-"<strong>Certificate not found.</strong><br>Please check the Certificate ID and try again.";
+    } else {
 
-}
+      result.style.display = "block";
 
-}
+      result.className =
+        "verify-result invalid";
 
-catch(error) {
+      result.innerHTML =
+        "<strong>Certificate not found.</strong><br>" +
+        "Please check the Certificate ID and try again.";
 
-result.style.display = "block";
-result.className = "verify-result invalid";
+    }
 
-result.innerHTML =
-"Unable to connect to the verification database. Please try again later.";
+  }
 
-}
+  catch(error) {
+
+    result.style.display = "block";
+
+    result.className =
+      "verify-result invalid";
+
+    result.innerHTML =
+      "Unable to connect to the verification database. " +
+      "Please try again later.";
+
+  }
 
 }
 
 </script>
 
- <section id="testimonials" style="padding:70px 20px; text-align:center;">
-  <h2>Student Testimonials</h2>
-  <p>Hear directly from some of our students about their learning experience at Latraduction Concepts.</p>
-
-  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:40px;">
-
-    <div style="max-width:350px; width:100%;">
-      <video controls playsinline style="width:100%; border-radius:16px;">
-        <source src="V1.mp4" type="video/mp4">
-      </video>
-      <h3>Ifunanya Obianefo</h3>
-    </div>
-
-    <div style="max-width:350px; width:100%;">
-      <video controls playsinline style="width:100%; border-radius:16px;">
-       <source src="V2.mp4" type="video/mp4">
-      </video>
-      <h3>Mrs Oluwabanke Adeusi</h3>
-    </div>
-
-    <div style="max-width:350px; width:100%;">
-      <video controls playsinline style="width:100%; border-radius:16px;">
-        <source src="V3.mp4" type="video/mp4">
-      </video>
-      <h3>Nimah Hammed</h3>
-    </div>
-
-  </div>
-</section>
-  <section id="gallery" style="padding:70px 20px; text-align:center;">
-  <h2 style="font-size:36px; color:#14213d; margin-bottom:15px;">Gallery</h2>
-  <p style="margin-bottom:40px;">
-    A glimpse into learning, practice and cultural experiences at Latraduction Concepts.
-  </p>
-
-  <div style="width:100%; max-width:900px; margin:0 auto; overflow:hidden; border-radius:18px;">
-
-    <div style="display:flex; width:400%; animation:latraductionGallery 16s infinite;">
-
-      <div style="width:25%; flex-shrink:0;">
-        <img src="french-classroom.jpg"
-             alt="French language students learning in a classroom"
-             style="width:100%; display:block; border-radius:18px;">
-      </div>
-
-      <div style="width:25%; flex-shrink:0;">
-        <img src="Listening.png"
-             alt="African students listening and learning French"
-             style="width:100%; display:block; border-radius:18px;">
-      </div>
-
-      <div style="width:25%; flex-shrink:0;">
-        <img src="Translation.png"
-             alt="African students practising French translation"
-             style="width:100%; display:block; border-radius:18px;">
-      </div>
-
-      <div style="width:25%; flex-shrink:0;">
-        <img src="excursion.png"
-             alt="African students on a French cultural excursion"
-             style="width:100%; display:block; border-radius:18px;">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<style>
-@keyframes latraductionGallery {
-  0%, 20% {
-    transform:translateX(0);
-  }
-  25%, 45% {
-    transform:translateX(-25%);
-  }
-  50%, 70% {
-    transform:translateX(-50%);
-  }
-  75%, 95% {
-    transform:translateX(-75%);
-  }
-  100% {
-    transform:translateX(0);
-  }
-}
-</style>
-  <section id="courses" style="padding:70px 20px; background:#f7f3eb; text-align:center;">
-  <h2 style="font-size:36px; color:#14213d; margin-bottom:15px;">
-    French Language Programs
-  </h2>
-
-  <p style="max-width:750px; margin:0 auto 45px; font-size:18px; color:#555;">
-    Build your French language skills with practical training designed to help you
-    communicate with confidence in real-life situations.
-  </p>
-
-  <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-      <h3 style="color:#14213d;">French for Beginners</h3>
-      <p>Start from the basics and learn essential French vocabulary, grammar, pronunciation and everyday expressions.</p>
-      <a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Beginners%20course."
-        style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a> 
-        Enroll Now
-      </a>
-    </div>
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-      <h3 style="color:#14213d;">Intermediate French</h3>
-      <p>Improve your speaking, listening, reading and writing while developing greater confidence in French.</p>
-      <a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20Intermediate%20French%20course." style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a>
- 
-       Enroll Now
-      </a>
-    </div>
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-   <h3 style="color:#14213d;">Advanced French</h3> 
-<p>Develop advanced communication skills and express yourself more naturally and effectively in French.</p>
-<a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20Advanced%20French%20course." style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a>
-        Enroll Now
-      </a>
-    </div>
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-      <h3 style="color:#14213d;">French Conversation</h3>
-      <p>Strengthen your speaking and listening skills through practical conversations and interactive practice.</p>
-     <a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20Conversation%20course." style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a>
-        
-        Enroll Now
-      </a>
-    </div>
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-      <h3 style="color:#14213d;">French for Travel</h3>
-      <p>Learn useful French expressions and communication skills for travelling and interacting confidently abroad.</p>
-      <a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Travel%20course." style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a>
-        
-        Enroll Now
-      </a>
-    </div>
-
-    <div style="background:white; padding:30px; border-radius:16px; max-width:330px; box-shadow:0 5px 20px rgba(0,0,0,0.08);">
-      <h3 style="color:#14213d;">French for Business</h3>
-      <p>Learn professional French vocabulary and communication skills for the workplace and international business.</p>
-     <a href="https://wa.me/2348154762565?text=Hello%20Latraduction%20Concepts%2C%20I%20would%20like%20to%20enroll%20for%20the%20French%20for%20Business%20course." style="display:inline-block; background:#f4c542; color:#14213d; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:bold;">Enroll Now</a>
-        Enroll Now
-      </a>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
+
