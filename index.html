@@ -395,21 +395,59 @@ Contact Us
 
 </header>
 <section style="text-align:center; padding:40px 20px;">
-<img src="french-classroom.jpg"
-     alt="French language students learning in a classroom"
-     style="width:100%; max-width:900px; border-radius:18px; display:block; margin:0 auto 25px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+<div style="width:100%; max-width:900px; margin:0 auto; overflow:hidden; border-radius:18px;">
 
-<img src="Listening.png"
-     alt="African students listening and learning French in class"
-     style="width:100%; max-width:900px; border-radius:18px; display:block; margin:0 auto 25px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+  <div style="display:flex; width:400%; animation:latraductionSlide 16s infinite;">
 
-<img src="Translation.png"
-     alt="African students translating French on laptops"
-     style="width:100%; max-width:900px; border-radius:18px; display:block; margin:0 auto 25px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    <div style="width:25%; flex-shrink:0;">
+      <img src="french-classroom.jpg"
+           alt="French language students learning in a classroom"
+           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    </div>
 
-<img src="excursion.png"
-     alt="African French students on a cultural excursion"
-     style="width:100%; max-width:900px; border-radius:18px; display:block; margin:auto; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    <div style="width:25%; flex-shrink:0;">
+      <img src="Listening.png"
+           alt="African students listening and learning French in class"
+           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    </div>
+
+    <div style="width:25%; flex-shrink:0;">
+      <img src="Translation.png"
+           alt="African students translating French on laptops"
+           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    </div>
+
+    <div style="width:25%; flex-shrink:0;">
+      <img src="excursion.png"
+           alt="African French students on a cultural excursion"
+           style="width:100%; display:block; border-radius:18px; box-shadow:0 6px 18px rgba(0,0,0,0.15);">
+    </div>
+
+  </div>
+</div>
+
+<style>
+@keyframes latraductionSlide {
+  0%, 20% {
+    transform: translateX(0);
+  }
+  25%, 45% {
+    transform: translateX(-25%);
+  }
+  50%, 70% {
+    transform: translateX(-50%);
+  }
+  75%, 95% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>
+  }
+}
+</style>
 </section>
 
 
