@@ -836,7 +836,7 @@ result.innerHTML =
 
 </script>
 
-  <section id="testimonials" style="padding:70px 20px; text-align:center;">
+ <section id="testimonials" style="padding:70px 20px; text-align:center;">
   <h2>Student Testimonials</h2>
   <p>Hear directly from some of our students about their learning experience at Latraduction Concepts.</p>
 
@@ -865,6 +865,63 @@ result.innerHTML =
 
   </div>
 </section>
+  <section id="gallery" style="padding:70px 20px; text-align:center;">
+  <h2 style="font-size:36px; color:#14213d; margin-bottom:15px;">Gallery</h2>
+  <p style="margin-bottom:40px;">
+    A glimpse into learning, practice and cultural experiences at Latraduction Concepts.
+  </p>
+
+  <div style="width:100%; max-width:900px; margin:0 auto; overflow:hidden; border-radius:18px;">
+
+    <div style="display:flex; width:400%; animation:latraductionGallery 16s infinite;">
+
+      <div style="width:25%; flex-shrink:0;">
+        <img src="french-classroom.jpg"
+             alt="French language students learning in a classroom"
+             style="width:100%; display:block; border-radius:18px;">
+      </div>
+
+      <div style="width:25%; flex-shrink:0;">
+        <img src="Listening.png"
+             alt="African students listening and learning French"
+             style="width:100%; display:block; border-radius:18px;">
+      </div>
+
+      <div style="width:25%; flex-shrink:0;">
+        <img src="Translation.png"
+             alt="African students practising French translation"
+             style="width:100%; display:block; border-radius:18px;">
+      </div>
+
+      <div style="width:25%; flex-shrink:0;">
+        <img src="excursion.png"
+             alt="African students on a French cultural excursion"
+             style="width:100%; display:block; border-radius:18px;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes latraductionGallery {
+  0%, 20% {
+    transform:translateX(0);
+  }
+  25%, 45% {
+    transform:translateX(-25%);
+  }
+  50%, 70% {
+    transform:translateX(-50%);
+  }
+  75%, 95% {
+    transform:translateX(-75%);
+  }
+  100% {
+    transform:translateX(0);
+  }
+}
+</style>
   <section id="courses" style="padding:70px 20px; background:#f7f3eb; text-align:center;">
   <h2 style="font-size:36px; color:#14213d; margin-bottom:15px;">
     French Language Programs
