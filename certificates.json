@@ -1,16 +1,42 @@
 [
   {
     "certificate_id": "LC-2027-001",
-    "student_name": "IFUNANYA OBIANEFO",
+    "verification_code": "F6C2A91D7E4B3058",
+    "student_name": "Ifunanya Obianefo",
     "date_issued": "15th February, 2027",
-    "program": "Training Program",
+    "program": "Professional Training Program",
+    "status": "VALID"
+  },
+  {
+    "certificate_id": "LC-2021-001",
+    "verification_code": "A7F3K9D2M8Q5R1X6",
+    "student_name": "Oluwabanke Adeusi",
+    "date_issued": "30th December, 2021",
+    "program": "Professional Training Program",
+    "status": "VALID"
+  },
+  {
+    "certificate_id": "LC-2026-001",
+    "verification_code": "B4N8T2P6W9C3L7Y5",
+    "student_name": "Oluwagbenga Salu",
+    "date_issued": "8th September, 2026",
+    "program": "Professional Training Program",
+    "status": "VALID"
+  },
+  {
+    "certificate_id": "LC-2027-002",
+    "verification_code": "H6R2V9K4D7M1Q8Z3",
+    "student_name": "Chineze Patricia Offiah",
+    "date_issued": "30th April, 2027",
+    "program": "Professional Training Program",
     "status": "VALID"
   },
   {
     "certificate_id": "LC-2026-002",
-    "student_name": "FATIMAH BISOLA MEMUDU",
-    "date_issued": "July 31th, 2026",
-    "program": "Training Program",
+    "verification_code": "A7F3D9E6128C4B7E",
+    "student_name": "Fatimah Bisola Memudu",
+    "date_issued": "31th July, 2026",
+    "program": "Professional Training Program",
     "status": "VALID"
   }
 ]
